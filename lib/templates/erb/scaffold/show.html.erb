@@ -1,0 +1,49 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2><%= singular_table_name %> Detail</h2>
+        <ol class="breadcrumb">
+            <li>
+                <%%= link_to 'Home', root_path %>
+            </li>
+            <li>
+                <%%= link_to '<%= plural_table_name %>', '/<%= plural_table_name %>' %>
+            </li>
+            <li>
+                <strong>Detail</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+        
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+          <h5>Informasi Detail</h5>
+          <div class="ibox-tools">
+              <%%= link_to edit_<%= singular_table_name %>_path(@<%= singular_table_name %>) do %>
+                <span class="fa fa-edit"></span>
+                Edit
+              <%% end %>
+          </div>
+      </div>
+      <div class="ibox-content" style="display: block;">
+        <table class="table table-bordered">
+          <%- attributes.each do |attribute| -%>
+            <tr>
+              <td><strong><%= attribute.human_name %>:</strong></td>
+              <td><%%= @<%= singular_table_name %>.<%= attribute.name %> %></td>
+            </tr>
+          <%- end -%>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%%= link_to <%= index_helper %>_path, class: 'btn btn-danger' do %>
+    Back
+  <%% end %>

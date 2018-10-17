@@ -1,0 +1,19 @@
+<%% #show_filters: :when_filtered %>
+<%%= grid(@<%= plural_table_name %>_grid, show_filters: :when_filtered) do |g|
+
+  <% attributes.each do |attribute| -%>
+    g.column name:  '<%= attribute.name %>', attribute: '<%= attribute.name %>' do |<%= singular_table_name %>|
+      <%= singular_table_name %>.<%= attribute.name %>
+    end
+  <% end -%>
+
+  g.column   do |<%= singular_table_name %>|
+    link_to '<i class="fa fa-eye"></i>'.html_safe, <%= singular_table_name %>
+  end
+  g.column   do |<%= singular_table_name %>|
+    link_to '<i class="fa fa-edit"></i>'.html_safe, edit_<%= singular_table_name %>_path(<%= singular_table_name %>)
+  end
+  g.column   do |<%= singular_table_name %>|
+    link_to '<i class="fa fa-trash"></i>'.html_safe, <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?'}
+  end
+end -%>

@@ -1,0 +1,26 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2><%= singular_table_name %> Baru</h2>
+        <ol class="breadcrumb">
+            <li>
+                <%%= link_to 'Home', root_path %>
+            </li>
+            <li>
+                <%%= link_to '<%= plural_table_name %>', '/<%= plural_table_name %>' %>
+            </li>
+            <li>
+                <strong><%= singular_table_name %> Baru</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+        
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+	<%%= render 'form' %>
+	<%%= link_to <%= index_helper %>_path, class: 'btn btn-danger' do %>
+		Back
+	<%% end %>
+</div>

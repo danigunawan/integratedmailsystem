@@ -1,0 +1,42 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+ *= require toastr/toastr.min.css
+ *= require_self
+ *= require font-awesome
+ *= require animate/animate.css
+ *= require style
+ *= require bootstrap-datepicker3
+ *= require select2
+
+  *= require iCheck/custom.css
+  *= require dataTables/dataTables.bootstrap.css
+  *= require dataTables/dataTables.responsive.css
+  *= require dataTables/dataTables.tableTools.min.css
+  *= require jquery-ui/jquery-ui-1.10.4.custom.min.css
+  *= require jqGrid/ui.jqgrid.css
+  *= require datapicker/datepicker3.css
+*/
+
+
+
+table {
+  //width:500px;
+  //table-layout:fixed;
+}
+table tr {
+  height:1em;
+}
+td {
+  overflow:hidden;
+  max-width: 300px;
+  white-space:nowrap;
+}

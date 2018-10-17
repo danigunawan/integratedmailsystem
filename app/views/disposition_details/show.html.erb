@@ -1,0 +1,69 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>disposition_detail Detail</h2>
+        <ol class="breadcrumb">
+            <li>
+                <%= link_to 'Home', root_path %>
+            </li>
+            <li>
+                <%= link_to 'disposition_details', '/disposition_details' %>
+            </li>
+            <li>
+                <strong>Detail</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+        
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+          <h5>Informasi Detail</h5>
+          <div class="ibox-tools">
+              <%= link_to edit_disposition_detail_path(@disposition_detail) do %>
+                <span class="fa fa-edit"></span>
+                Edit
+              <% end %>
+          </div>
+      </div>
+      <div class="ibox-content" style="display: block;">
+        <table class="table table-bordered">
+
+            <tr>
+              <td><strong>Nomor:</strong></td>
+              <td><%= @disposition_detail.nomor %></td>
+            </tr>
+
+            <tr>
+              <td><strong>Penerima:</strong></td>
+              <td><%= @disposition_detail.penerima %></td>
+            </tr>
+
+            <tr>
+              <td><strong>Status:</strong></td>
+              <td><%= @disposition_detail.status %></td>
+            </tr>
+
+            <tr>
+              <td><strong>Laporan:</strong></td>
+              <td><%= @disposition_detail.laporan %></td>
+            </tr>
+
+            <tr>
+              <td><strong>Tgl laporan:</strong></td>
+              <td><%= @disposition_detail.tgl_laporan %></td>
+            </tr>
+
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= link_to disposition_details_path, class: 'btn btn-danger' do %>
+    Back
+  <% end %>

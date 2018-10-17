@@ -1,0 +1,83 @@
+<%= form_for(@disposition, html: { class: "form-horizontal", role: "form" }) do |f| %>
+  <% if @disposition.errors.any? %>
+    <div class="alert alert-danger alert-dismissable" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4><%= pluralize(@disposition.errors.count, "error") %> prohibited this disposition from being saved:</h4>
+
+      <ul>
+      <% @disposition.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="form-group">
+    
+      <%= f.label :nomor, class: "col-sm-2 control-label" %>
+      <div class="col-sm-6">
+        <%= f.text_field :nomor, class: "form-control" %>
+      </div>
+  </div>
+
+  <div class="form-group">
+    
+      <%= f.label :letter_id, class: "col-sm-2 control-label" %>
+      <div class="col-sm-6">
+        <%= f.text_field :letter_id, class: "form-control" , value:params[:letter_id]%>
+      </div>
+    
+  </div>
+
+  <div class="form-group">
+    
+      <%= f.label :instruksi, class: "col-sm-2 control-label" %>
+      <div class="col-sm-6">
+        <%= f.text_field :instruksi, class: "form-control" %>
+      </div>
+    
+  </div>
+
+  <div class="form-group">
+    
+      <%= f.label :tgl, class: "col-sm-2 control-label" %>
+      <div class="col-sm-6">
+        <%= f.date_select :tgl, class: "form-control" %>
+      </div>
+    
+  </div>
+
+
+  <div class="form-group">
+
+      <%= f.label :pemberi, class: "col-sm-2 control-label" %>
+      <div class="col-sm-6">
+        <% if current_user.role=='direktur'|| current_user.role=='direksi' || current_user.role=='kadiv' %>
+        <%= f.text_field :pemberi, class: "form-control", :disabled=>true, value:current_user.nama %>
+          <% else %>
+          <%= f.text_field :pemberi, class: "form-control", :disabled=>true, value:User.find_by_username(CostCentre.find_by_kode(current_user.cost_centre_id).pejabat).nama %>
+        <% end %>
+      </div>
+
+  </div>
+
+  <div class="form-group">
+
+      <%= f.label :cost_centre_pemberi_id, class: "col-sm-2 control-label" %>
+      <div class="col-sm-6">
+        <%= f.number_field :cost_centre_pemberi_id, class: "form-control", :disabled=>true, value:current_user.cost_centre_id %>
+      </div>
+
+  </div>
+
+
+
+
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

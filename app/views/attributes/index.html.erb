@@ -1,0 +1,77 @@
+<% concat ("<div class='alert alert-success alert-dismissable' id='notice'>" + notice + "</div>").html_safe if !notice.nil? %>
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Daftar Sifat</h2>
+        <ol class="breadcrumb">
+            <li>
+                <%= link_to 'Home', root_path %>
+            </li>
+            <li>
+                <strong>attributes</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+        
+    </div>
+</div>
+
+<div class="ibox float-e-margins">
+    <div class="ibox-title">
+        <h5>Sifat</h5>
+        <div class="ibox-tools">
+            <!-- <a class="collapse-link">
+                <i class="fa fa-chevron-up"></i>
+            </a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="table_basic.html#">
+                <i class="fa fa-wrench"></i>
+            </a> -->
+            <!-- <ul class="dropdown-menu dropdown-user">
+                <li><a href="table_basic.html#">Config option 1</a>
+                </li>
+                <li><a href="table_basic.html#">Config option 2</a>
+                </li>
+            </ul> -->
+            <%= link_to new_attribute_path do %>
+              <span class="fa fa-plus"></span>
+              Tambah Sifat
+            <% end %>
+            <!-- 
+            <a class="close-link">
+                <i class="fa fa-times"></i>
+            </a> -->
+        </div>
+    </div>
+    <div class="ibox-content" style="display: block;">
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama</th>
+            
+
+            
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <%= content_tag_for(:tr, @attributes) do |attribute| %>
+              <td><%= attribute.id %></td>
+                <td><%= attribute.nama %></td>
+
+                <td><%= link_to '<i class="fa fa-eye"></i>'.html_safe, attribute %></td>
+                <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_attribute_path(attribute) %></td>
+                <td><%= link_to '<i class="fa fa-trash"></i>'.html_safe, attribute, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+    </div>
+</div>
+
+<br>

@@ -1,0 +1,115 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Detail Disposisi</h2>
+        <ol class="breadcrumb">
+            <li>
+                <%= link_to 'Home', root_path %>
+            </li>
+            <li>
+                <%= link_to 'dispositions', '/dispositions' %>
+            </li>
+            <li>
+                <strong>Detail</strong>
+            </li>
+        </ol>
+      <br>
+
+        <%= link_to mydis_url, class: 'btn btn-danger' do %>
+          Back
+        <% end %>
+
+      <% if current_user.role!='dirut' || current_user.role!='sekretaris_dirut'%>
+        <%# if before=='disposition_path'%>
+          <%= link_to new_disposition_path, class: 'btn btn-info' do %>
+            Disposisikan
+          <% end %>
+        <%# end %>
+
+        <%= link_to '', class: 'btn btn-primary' do %>
+          Lapor
+        <% end %>
+      <% end %>
+
+    </div>
+    <div class="col-lg-2">
+        
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+          <h5>Informasi Detail</h5>
+          <div class="ibox-tools">
+              <%= link_to edit_disposition_path(@disposition) do %>
+                <span class="fa fa-edit"></span>
+                Edit
+              <% end %>
+          </div>
+      </div>
+      <div class="ibox-content" style="display: block;">
+        <table class="table table-bordered">
+          <tr>
+            <td><strong>Nomor:</strong></td>
+            <td><%= @disposition.nomor %></td>
+          </tr>
+
+          <tr>
+            <td><strong>Letter:</strong></td>
+            <td><%= @disposition.letter_id %></td>
+          </tr>
+
+          <tr>
+            <td><strong>Instruksi:</strong></td>
+            <td><%= @disposition.instruksi %></td>
+          </tr>
+
+          <tr>
+            <td><strong>Tgl:</strong></td>
+            <td><%= @disposition.tgl %></td>
+          </tr>
+
+          <tr>
+            <td><strong>Pemberi:</strong></td>
+            <td><%= @disposition.pemberi %></td>
+          </tr>
+
+          <tr>
+            <td><strong>Cost centre pemberi:</strong></td>
+            <td><%= CostCentre.find_by_kode(@disposition.cost_centre_pemberi_id).nama %></td>
+          </tr>
+
+          <% if current_user.role!='staf'%>
+          <%= content_tag_for(:tr, @detail) do |det| %>
+
+            <tr>
+              <td><strong>Penerima:</strong></td>
+              <td><%= det.penerima %></td>
+            </tr>
+
+
+            <tr>
+              <td><strong>Cost centre penerima:</strong></td>
+              <td><%= CostCentre.find_by_kode(det.cost_centre_penerima_id).nama %></td>
+            </tr>
+
+
+            <tr>
+              <td><strong>Status:</strong></td>
+              <td><%= det.status %></td>
+            </tr>
+
+            <tr>
+              <td><strong>Laporan:</strong></td>
+              <td><%= det.laporan %></td>
+            </tr>
+
+          <% end %>
+            <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+

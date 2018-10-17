@@ -1,0 +1,150 @@
+<br>
+
+<div class="ibox float-e-margins">
+  <div class="ibox-title">
+    <h5>Selamat datang di aplikasi Integrated Mail System</h5>
+    <div class="ibox-tools">
+
+    </div>
+  </div>
+  <div class="ibox-content" style="display: block;">
+    <div class="row">
+
+<!--SURAT  -->
+      <div class="col-md-12">
+        <div class="ibox float-e-margins">
+          <div class="ibox-title">
+            <!--<span class="label label-success pull-right">Monthly</span>-->
+            <h5>Surat</h5>
+          </div>
+          <div class="ibox-content">
+            <div class="row">
+
+              <div class="wrapper wrapper-content animated fadeInRight dim">
+                <div class="row">
+
+<!--SURAT MASUK & KELUAR                  -->
+                  <div class="col-lg-4">
+                    <div class="widget style1 btn-danger">
+                      <div class="row">
+                        <div class="col-xs-4 text-center">
+                          <i class="fa fa-envelope-o fa-5x"></i>
+                        </div>
+                        <div class="col-xs-8 text-right">
+                          <span> Total Surat Masuk </span>
+                          <h2 class="font-bold">
+                            <%= @count_letter_masuk %>
+                          </h2>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+<!--BELUM DISPOSISI                  -->
+                  <div class="col-lg-4">
+                    <div class="widget style1 btn-primary">
+                      <div class="row">
+                        <div class="col-xs-4">
+                          <i class="fa fa-question-circle fa-5x"></i>
+                        </div>
+                        <div class="col-xs-8 text-right">
+                          <span> Surat Masuk Belum Disposisi </span>
+                          <h2 class="font-bold">
+                            <%= @count_letter_status %>
+                          </h2>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <% if can? :crud, Letter%>
+                  <div class="col-lg-4">
+                    <div class="widget style1 btn-info">
+                      <div class="row">
+                        <div class="col-xs-4">
+                          <i class="fa fa-paper-plane fa-5x"></i>
+                        </div>
+                        <div class="col-xs-8 text-right">
+                          <span> Surat Keluar</span>
+                          <br>
+                          <span>  </span>
+                          <h2 class="font-bold">
+                            <%= @count_letter_keluar %>
+                          </h2>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                    <% end %>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!--DISPOSISI MASUK-->
+      <% if can? :see, DashboardsController %>
+      <% if can? :crud, Disposition%>
+      <div class="col-md-12">
+        <div class="ibox float-e-margins">
+          <div class="ibox-title">
+            <!--<span class="label label-success pull-right">Monthly</span>-->
+            <h5>Disposisi</h5>
+          </div>
+          <div class="ibox-content">
+            <div class="row">
+
+              <div class="wrapper wrapper-content animated fadeInRight dim">
+                <div class="row">
+
+                  <!--MASUK                  -->
+                  <div class="col-lg-4">
+                    <div class="widget style1 btn-warning">
+                      <div class="row">
+                        <div class="col-xs-4 text-center">
+                          <i class="fa fa-inbox fa-5x"></i>
+                        </div>
+                        <div class="col-xs-8 text-right">
+                          <span> Disposisi Masuk</span>
+                          <h2 class="font-bold">
+                            <%= @count_disposisi_masuk %>
+                          </h2>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--BELUM DISPOSISI                  -->
+                  <div class="col-lg-4">
+                    <div class="widget style1 btn-success">
+                      <div class="row">
+                        <div class="col-xs-4">
+                          <i class="fa fa-question-circle fa-5x"></i>
+                        </div>
+                        <div class="col-xs-8 text-right">
+                          <span> Disposisi Masuk</span>
+                          <br>
+                          <span> Belum Didisposisikan </span>
+                          <h2 class="font-bold">
+                            <%= @count_disposisi_status %>
+                          </h2>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <% end %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+

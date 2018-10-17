@@ -1,0 +1,24 @@
+<div class="animated fadeInUp" align="center" style="margin-top: 100px;">
+  <%= image_tag("icon.jpg", size: "400x100")  %>
+</div>
+<div class="middle-box text-center loginscreen  animated fadeInDown" style="margin-top: 0px; padding-top: 0px">
+  <div>
+
+    <form class="m-t" role="form" action="/auth" method="post">
+      <div class="form-group">
+        <input type="text" name="username" class="form-control" placeholder="Username" required="">
+      </div>
+      <div class="form-group">
+        <input type="password" name="password" class="form-control" placeholder="Password" required="">
+      </div>
+      <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
+
+      <% concat ("<div class='alert alert-danger alert-dismissable' id='notice'>" + params['notice'] + "<button aria-hidden='true' data-dismiss=\"alert\" class=\"close\" type=\"button\">×</button></div>").html_safe if !params['notice'].nil? %>
+
+      <!-- <a href="#"><small>Forgot password?</small></a>
+            <p class="text-muted text-center"><small>Do not have an account?</small></p>
+            <a class="btn btn-sm btn-white btn-block" href="<%= url_for :controller => 'pages', :action => 'register' %>">Create an account</a> -->
+    </form>
+    <p class="m-t"> <small>Procurement Integrated System. PGN Solution &copy; 2016</small> </p>
+  </div>
+</div>

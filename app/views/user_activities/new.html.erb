@@ -1,0 +1,26 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>user_activity Baru</h2>
+        <ol class="breadcrumb">
+            <li>
+                <%= link_to 'Home', root_path %>
+            </li>
+            <li>
+                <%= link_to 'user_activities', '/user_activities' %>
+            </li>
+            <li>
+                <strong>user_activity Baru</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+        
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+	<%= render 'form' %>
+	<%= link_to user_activities_path, class: 'btn btn-danger' do %>
+		Back
+	<% end %>
+</div>

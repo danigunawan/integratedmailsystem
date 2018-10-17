@@ -1,0 +1,91 @@
+<% concat ("<div class='alert alert-success alert-dismissable' id='notice'>" + notice + "</div>").html_safe if !notice.nil? %>
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Listing user_activities</h2>
+        <ol class="breadcrumb">
+            <li>
+                <%= link_to 'Home', root_path %>
+            </li>
+            <li>
+                <strong>user_activities</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+        
+    </div>
+</div>
+
+<div class="ibox float-e-margins">
+    <div class="ibox-title">
+        <h5>user_activities</h5>
+        <div class="ibox-tools">
+            <!-- <a class="collapse-link">
+                <i class="fa fa-chevron-up"></i>
+            </a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="table_basic.html#">
+                <i class="fa fa-wrench"></i>
+            </a> -->
+            <!-- <ul class="dropdown-menu dropdown-user">
+                <li><a href="table_basic.html#">Config option 1</a>
+                </li>
+                <li><a href="table_basic.html#">Config option 2</a>
+                </li>
+            </ul> -->
+            <%= link_to new_user_activity_path do %>
+              <span class="fa fa-plus"></span>
+              Tambah user_activity
+            <% end %>
+            <!-- 
+            <a class="close-link">
+                <i class="fa fa-times"></i>
+            </a> -->
+        </div>
+    </div>
+    <div class="ibox-content" style="display: block;">
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered table-hover">
+            <thead>
+              <tr>
+            
+                <th>Username</th>
+            
+                <th>Controller</th>
+            
+                <th>Action</th>
+            
+                <th>Activity</th>
+            
+                <th>Time</th>
+            
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <%= content_tag_for(:tr, @user_activities) do |user_activity| %>
+            
+                <td><%= user_activity.username %></td>
+            
+                <td><%= user_activity.controller %></td>
+            
+                <td><%= user_activity.action %></td>
+            
+                <td><%= user_activity.activity %></td>
+            
+                <td><%= user_activity.time %></td>
+            
+                <td><%= link_to '<i class="fa fa-eye"></i>'.html_safe, user_activity %></td>
+                <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_user_activity_path(user_activity) %></td>
+                <td><%= link_to '<i class="fa fa-trash"></i>'.html_safe, user_activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+    </div>
+</div>
+
+<br>

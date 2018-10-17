@@ -1,0 +1,63 @@
+<% flash.each do |message_type, message| %>
+<div class="alert alert-<%= message_type %>"><%= message %></div>
+<% end %>
+<div class="wrapper wrapper-content animated fadeInRight">
+<h1 align="center">Vendor Registration</h1>
+    <div class="col-sm-offset-3  col-sm-6">
+    <%= form_for :user,url: users_path, :html => { :class => "form-horizontal" } do |f| %>
+
+    <% if !@user.nil? %>
+        <% if @user.errors.any? %>
+            <div class="alert alert-danger alert-dismissable" role="alert">
+              <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <h4><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h4>
+
+              <ul>
+              <% @user.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+    <% end %>
+
+    <div class="form-group">
+
+        <%= f.label :username, :class =>"col-sm-2 control-label" %>
+        <div class="col-sm-10">
+        <%= f.text_field :username,:class =>"form-control",:required => "true"  %>
+        </div>
+    </div>
+    <div class="form-group">
+
+        <%= f.label :email, :class =>"col-sm-2 control-label" %>
+        <div class="col-sm-10">
+        <%= f.email_field :email,:class =>"form-control",:required => "true" %>
+        </div>
+    </div>
+    <div class="form-group">
+
+        <%= f.label :passwd, :class =>"col-sm-2 control-label" %>
+        <div class="col-sm-10">
+        <%= f.password_field :password,:class =>"form-control",:required => "true" %>
+        </div>
+    </div>
+    <div class="form-group">
+
+        <%= f.label :password_confirmation, "Confirmation",:class =>"col-sm-2 control-label" %>
+        <div class="col-sm-10">
+        <%= f.password_field :password_confirmation,:class =>"form-control",:required => "true" %>
+        </div>
+    </div>
+   
+    <div class="form-group">
+        <div class="col-sm-10">
+            <%= f.submit "Create My Account", class: "btn btn-primary" %>
+        </div>
+    </div>
+    </div>
+
+    <% end %>
+
+
+</div>

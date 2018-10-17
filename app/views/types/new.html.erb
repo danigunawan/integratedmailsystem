@@ -1,0 +1,26 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>type Baru</h2>
+        <ol class="breadcrumb">
+            <li>
+                <%= link_to 'Home', root_path %>
+            </li>
+            <li>
+                <%= link_to 'types', '/types' %>
+            </li>
+            <li>
+                <strong>type Baru</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+        
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+	<%= render 'form' %>
+	<%= link_to types_path, class: 'btn btn-danger' do %>
+		Back
+	<% end %>
+</div>

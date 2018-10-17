@@ -1,0 +1,1 @@
+json.extract! @letter, :id, :no_surat, :sifat, :jenis, :pengirim, :penerima, :asal_surat, :perihal, :tgl_surat, :tgl_terima, :cost_centre_id, :directorate_id, :nama_file, :status, :delegasi, :created_at, :updated_at

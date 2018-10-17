@@ -1,0 +1,30 @@
+<% provide(:title, "Log in") %>
+<% flash.each do |message_type, message| %>
+  <div class="alert alert-<%= message_type %>"><%= message %></div>
+<% end %>
+<div class="animated fadeInUp" align="center" style="margin-top: 100px;">
+  <%= image_tag("logo-login2.png", size: "400x100")  %>
+
+<div class="middle-box text-center loginscreen  animated fadeInDown" style="margin-top: 0px; padding-top: 0px">
+  <div>
+
+    <%= form_for(:session, url: login_path,:html =>{ :class => "m-t" }) do |f| %>
+      <div class="form-group">
+        <%= f.text_field :username, class: 'form-control',placeholder: "Username" %>
+      </div>
+      <div class="form-group">
+        <%= f.password_field :password, class: 'form-control',placeholder: "Password"  %>
+      </div>
+      <%= f.label :remember_me, class: "checkbox inline" do %>
+        <%= f.check_box :remember_me %>
+        <span>Remember me on this computer</span>
+      <% end %>
+      <br>
+
+      <%= f.submit "Log In", class: "btn btn-info block full-width m-b" %>
+      <% concat ("<div class='alert alert-danger alert-dismissable' id='notice'>" + params['notice'] + "<button aria-hidden='true' data-dismiss=\"alert\" class=\"close\" type=\"button\">×</button></div>").html_safe if !params['notice'].nil? %>
+    <% end %>
+    <p class="m-t"> <small>Integrated Mail System. PGN Solution &copy; <%= Time.now.strftime("%Y") %></small> </p>
+  </div>
+</div>
+</div>

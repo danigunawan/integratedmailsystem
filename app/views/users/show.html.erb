@@ -1,0 +1,69 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>user Detail</h2>
+        <ol class="breadcrumb">
+            <li>
+                <%= link_to 'Home', root_path %>
+            </li>
+            <li>
+                <%= link_to 'users', '/users' %>
+            </li>
+            <li>
+                <strong>Detail</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+        
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+          <h5>Informasi Detail</h5>
+          <div class="ibox-tools">
+              <%= link_to edit_user_path(@user) do %>
+                <span class="fa fa-edit"></span>
+                Edit
+              <% end %>
+          </div>
+      </div>
+      <div class="ibox-content" style="display: block;">
+        <table class="table table-bordered">
+
+            <tr>
+              <td><strong>Username:</strong></td>
+              <td><%= @user.username %></td>
+            </tr>
+
+            <tr>
+              <td><strong>Email:</strong></td>
+              <td><%= @user.email %></td>
+            </tr>
+
+            <tr>
+              <td><strong>Password:</strong></td>
+              <td><%= @user.password %></td>
+            </tr>
+
+            <tr>
+              <td><strong>Role:</strong></td>
+              <td><%= @user.role %></td>
+            </tr>
+
+            <tr>
+              <td><strong>Cost Center:</strong></td>
+              <td><%= @user.cost_centre_id %></td>
+            </tr>
+
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= link_to users_path, class: 'btn btn-danger' do %>
+    Back
+  <% end %>

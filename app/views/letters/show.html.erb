@@ -1,0 +1,114 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>letter Detail</h2>
+        <ol class="breadcrumb">
+            <li>
+                <%= link_to 'Home', root_path %>
+            </li>
+            <li>
+                <%= link_to 'letters', '/letters' %>
+            </li>
+            <li>
+                <strong>Detail</strong>
+            </li>
+        </ol>
+      <br>
+      <%= link_to letters_path, class: 'btn btn-danger' do %>
+        Back
+      <% end %>
+    </div>
+    <div class="col-lg-2">
+        
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+          <h5>Informasi Detail</h5>
+          <div class="ibox-tools">
+
+          </div>
+      </div>
+      <div class="ibox-content" style="display: block;">
+        <table class="table table-bordered">
+
+            <tr>
+              <td><strong>No surat:</strong></td>
+              <td><%= @letter.no_surat %></td>
+            </tr>
+
+            <tr>
+              <td><strong>Sifat:</strong></td>
+              <td><%= @letter.sifat %></td>
+            </tr>
+
+            <tr>
+              <td><strong>Jenis:</strong></td>
+              <td><%= @letter.jenis %></td>
+            </tr>
+
+            <tr>
+              <td><strong>Pengirim:</strong></td>
+              <td><%= @letter.pengirim %></td>
+            </tr>
+
+            <tr>
+              <td><strong>Penerima:</strong></td>
+              <td><%= @letter.penerima %></td>
+            </tr>
+
+            <tr>
+              <td><strong>Asal surat:</strong></td>
+              <td><%= @letter.asal_surat %></td>
+            </tr>
+
+            <tr>
+              <td><strong>Perihal:</strong></td>
+              <td><%= @letter.perihal %></td>
+            </tr>
+
+            <tr>
+              <td><strong>Tgl surat:</strong></td>
+              <td><%= @letter.tgl_surat %></td>
+            </tr>
+
+            <tr>
+              <td><strong>Tgl terima:</strong></td>
+              <td><%= @letter.tgl_terima %></td>
+            </tr>
+
+            <tr>
+              <td><strong>Cost centre:</strong></td>
+              <td><%= @letter.cost_centre_id %></td>
+            </tr>
+
+            <tr>
+              <td><strong>Directorate:</strong></td>
+              <td><%= @letter.directorate_id %></td>
+            </tr>
+
+            <tr>
+              <td><strong>Nama file:</strong></td>
+              <td><%= @letter.nama_file %>
+                <%= @b=@letter.nama_file %>
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>Status:</strong></td>
+              <td><%= @letter.status %></td>
+            </tr>
+
+            <tr>
+              <td><strong>Delegasi:</strong></td>
+              <td><%= @letter.delegasi %></td>
+            </tr>
+        </table>
+        <iframe src="<%= link_to "display using the full viewer", pdfjs.full_path(file: "/assets/uploads/surat/surat_20180820145007767_1577-1-10744-1-10-201709131.pdf") %>"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+

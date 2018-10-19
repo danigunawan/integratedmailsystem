@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  controller: MyString
+  action: MyString
+  activity: MyString
+  time: 2017-05-31 09:56:10
+
+two:
+  username: MyString
+  controller: MyString
+  action: MyString
+  activity: MyString
+  time: 2017-05-31 09:56:10

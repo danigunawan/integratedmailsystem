@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nomor: MyString
+  letter_id: 1
+  instruksi: MyString
+  tgl: 2018-08-10
+  status: MyString
+  laporan: MyString
+  penerima: MyString
+  pemberi: MyString
+  cost_centre_pemberi_id: 1
+  cost_centre_penerima_id: 1
+
+two:
+  nomor: MyString
+  letter_id: 1
+  instruksi: MyString
+  tgl: 2018-08-10
+  status: MyString
+  laporan: MyString
+  penerima: MyString
+  pemberi: MyString
+  cost_centre_pemberi_id: 1
+  cost_centre_penerima_id: 1

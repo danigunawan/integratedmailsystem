@@ -1,0 +1,12 @@
+V. 1.1
+- File Upload Fixed
+- Attachment delete on some vendor related object fixed
+- Verification report w/ authorization
+- delete vendor classification
+- Vendor legal base pluralization cancan fixed
+- default status for vendor related data fixed
+- crud on locked on vendor data with verified status
+- user umum added
+- auto registration for ldap users
+- authorization layout on vendor n umum fixed
+- fixed creating users

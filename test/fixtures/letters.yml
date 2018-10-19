@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  no_surat: MyString
+  sifat: MyString
+  jenis: MyString
+  pengirim: MyString
+  penerima: MyString
+  asal_surat: MyString
+  perihal: MyString
+  tgl_surat: 2018-08-07
+  tgl_terima: MyString
+  cost_centre_id: 1
+  directorate_id: 1
+  nama_file: MyString
+  status: MyString
+  delegasi: MyString
+
+two:
+  no_surat: MyString
+  sifat: MyString
+  jenis: MyString
+  pengirim: MyString
+  penerima: MyString
+  asal_surat: MyString
+  perihal: MyString
+  tgl_surat: 2018-08-07
+  tgl_terima: MyString
+  cost_centre_id: 1
+  directorate_id: 1
+  nama_file: MyString
+  status: MyString
+  delegasi: MyString
